@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>visualization</title>
+    <!-- css引用 -->
+    <link rel="stylesheet" href="./v5.3.0-dist/ol.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./css/visualization.css"/>
+    <link href="./css/fSelect.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./css/dateTime.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- js引用 -->
+    <script src="./v5.3.0-dist/ol.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+    <script src="js/fSelect.js"></script>
+</head>
+<body>
+    <header>
+        <div class="title">招聘信息可视化界面</div>
+        <div class="search">
+            <div class="s2" id="shengfeng" >
+            省份
+            <select class="demo" multiple="multiple" >
+                <option value="beijing">北京</option>
+                <option value="shanghai">上海</option>
+                <option value="tianjing">天津</option>
+                <option value="chongqing">重庆</option>
+                <option value="guangdong">广东</option>
+                <option value="zhejiang">浙江</option>
+                <option value="jiangsu">江苏</option>
+                <option value="sichuan">四川</option>
+                <option value="fujian">福建</option>
+                <option value="hainan">海南</option>
+                <option value="shandong">山东</option>
+                <option value="jiangxi">江西</option>
+                <option value="anhui">安徽</option>
+                <option value="hebei">河北</option>
+                <option value="henan">河南</option>
+                <option value="hubei">湖北</option>
+                <option value="hunan">湖南</option>
+                <option value="shanxi">陕西</option>
+                <option value="shanxi2">山西</option>
+                <option value="heilongjiang">黑龙江</option>
+                <option value="liaoning">辽宁</option>
+                <option value="jiling">吉林</option>
+                <option value="guangxi">广西</option>
+                <option value="yunnan">云南</option>
+                <option value="gansu">甘肃</option>
+                <option value="neimenggu">内蒙古</option>
+                <option value="ningxia">宁夏</option>
+                <option value="xizang">西藏</option>
+                <option value="xingjiang">新疆</option>
+                <option value="qinghai">青海</option>
+            </select>
+            </div>
+            <div class="s2" id="leibie" >
+            类别
+                <select class="demo" multiple="multiple">
+                    <option value="计算机">计算机</option>
+                    <option value="销售">销售</option>
+                    <option value="汽车">汽车</option>
+                    <option value="贸易/物流">贸易/物流</option>
+                    <option value="金融">金融</option>
+                    <option value="房地产">房地产</option>
+                    <option value="生产制造">生产制造</option>
+                    <option value="咨询">咨询</option>
+                    <option value="医疗健康">医疗健康</option>
+                    <option value="服务业">服务业</option>
+                    <option value="管培生/公务员">管培生/公务员</option>
+                    <option value="管理">管理</option>
+                    <option value="传媒">传媒</option> 
+                    <option value="其他">其他</option>         
+                </select>
+            </div>
+            <div class="s2" id="salary">
+                薪资范围
+                <select class="demo" id="sal" >
+                <option value="salary1">3000以下</option>
+                <option value="salary2">3000~6000</option>
+                <option value="salary3">6000~10000</option>
+                <option value="salary4">10000~15000</option>
+                <option value="salary5">15000~20000</option>
+                <option value="salary6">20000以上</option>
+                </select>
+            </div>
+            <div class="s2" id="guanjianzi">
+                关键字<input type="text"  id="g1"/> 
+            </div>
+            <div class="s2">
+                <input class="btn" type="button" value="确定" id="butt" onclick="search()">
+                <input class="btn" type="button" value="生成图表" id="butt" onclick="createradar()">
+            </div>
+        </div>
+    </header>        
+    <div id="map" class="map">
+        <pre id="info">
+        </pre>
+    </div>
+
+    <script type="text/javascript" src="./js/webgis.js"></script>
+    <script>
+        $(function() {
+                $('.demo').fSelect();
+            });
+    </script>
+    <footer>
+            <a href="../index/index.html">回到首页</a> &boxv;Copyright&nbsp;&copy;2019&nbsp;team&nbsp;324.All&nbsp;rights&nbsp;reserved.
+    </footer>
+</body>
+</html>
